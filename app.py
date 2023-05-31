@@ -6,8 +6,8 @@ from twilio.rest import Client
 
 def get_ice_servers():
     try:
-        account_sid = st.secrets["twilio_account_sid"]
-        auth_token = st.secrets["twilio_auth_token"]
+        account_sid = "ACf82db96565ebc7d37f856da15aae875a"  # Replace with your actual account SID
+        auth_token = "1a7b981aca52cf213d7df68de8d57838"  # Replace with your actual auth token
         client = Client(account_sid, auth_token)
         token = client.tokens.create()
         return token.ice_servers
