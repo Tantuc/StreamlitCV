@@ -1,6 +1,5 @@
 import cv2
 import streamlit as st
-import numpy as np
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 
 FACE_DETECTOR_PATH = "haarcascade_frontalface_default.xml"
@@ -23,6 +22,7 @@ class FaceDetector(VideoTransformerBase):
 
 st.title("Real-time Face Detection")
 st.markdown(
-    "This app uses the Streamlit-WebRTC component to access the webcam in real time and perform face detection using OpenCV.")
+    "This app uses the Streamlit-WebRTC component to access the webcam in real time and perform face detection using OpenCV."
+)
 
 webrtc_streamer(key="example1", video_transformer_factory=FaceDetector)
