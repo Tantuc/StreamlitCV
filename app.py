@@ -6,7 +6,6 @@ FACE_DETECTOR_PATH = "haarcascade_frontalface_default.xml"
 
 class FaceDetector(VideoTransformerBase):
     def __init__(self):
-        super().__init__()
         self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + FACE_DETECTOR_PATH)
 
     def transform(self, frame):
