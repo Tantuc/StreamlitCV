@@ -25,4 +25,14 @@ st.markdown(
     "This app uses the Streamlit-WebRTC component to access the webcam in real time and perform face detection using OpenCV."
 )
 
-webrtc_streamer(key="example1", video_transformer_factory=FaceDetector)
+webrtc_ctx = webrtc_streamer(
+    key="example",
+    mode="recvonly",
+    video_transformer_factory=FaceDetector,
+    async_transform=True,
+)
+
+if webrtc_ctx.video_receiver:
+    st.video(webrtc_ctx.video_receiver)
+else:
+    st.warning("Waiting for webcam to be connected.")
