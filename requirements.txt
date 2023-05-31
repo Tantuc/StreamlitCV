@@ -1,4 +1,3 @@
-opencv-python
 streamlit
-numpy
 streamlit-webrtc
+opencv-python-headless
